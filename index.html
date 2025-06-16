@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Visualizer</title>
+    <style>
+        *{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .node{
+            padding: 20px;
+            border: 1px solid black;
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+        }
+        .nodes-animated{
+            background-color: lightblue;
+        }
+        .path{
+            background-color: yellow;
+        }
+        .start{
+            background: url("https://raw.githubusercontent.com/clementmihailescu/Pathfinding-Visualizer/c51f2d5fd3386b485694581ca0f324cf343f39b1/public/styling/triangletwo-right.svg");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .goal{
+            background: url("https://raw.githubusercontent.com/clementmihailescu/Pathfinding-Visualizer/c51f2d5fd3386b485694581ca0f324cf343f39b1/public/styling/circle.svg");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .obstacle{
+            background-color: #777777;
+        }
+        button{
+            background-color: #420763;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: small;
+            padding: 10px 20px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                }
+        .wrapper{
+            margin-top: 20px;
+        }
+        .menu{
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .puff-in-center {
+    	-webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+        }
+        
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+      
+      .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        border: 3px solid #420763;
+
+      }
+      
+      .modal-title {
+        margin-top: 0;
+      }
+      
+      .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+        
+        @-webkit-keyframes puff-in-center {
+        0% {
+            -webkit-transform: scale(2);
+                    transform: scale(2);
+            -webkit-filter: blur(4px);
+                    filter: blur(4px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            -webkit-filter: blur(0px);
+                    filter: blur(0px);
+            opacity: 1;
+        }
+        }
+        @keyframes puff-in-center {
+        0% {
+            -webkit-transform: scale(2);
+                    transform: scale(2);
+            -webkit-filter: blur(4px);
+                    filter: blur(4px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            -webkit-filter: blur(0px);
+                    filter: blur(0px);
+            opacity: 1;
+        }
+        }
+
+        .scale-up-center {
+	        -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+        
+        @-webkit-keyframes scale-up-center {
+        0% {
+            -webkit-transform: scale(0.5);
+                    transform: scale(0.5);
+        }
+        100% {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+        }
+        }
+        @keyframes scale-up-center {
+        0% {
+            -webkit-transform: scale(0.5);
+                    transform: scale(0.5);
+        }
+        100% {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+        }
+        
+        
+
+        
+}
+
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-content">
+            <h2 style="text-align: center;">Welcome to my Pathfinding Visualizer!</h2>
+          <img src="pathfinder.gif" alt="" width="800px" id="pathfinder-gif">
+          <br>
+          <div class="container">
+          <button class="modal-close-button">Close</button>
+        </div>
+        </div>
+      </div>
+    <form action="" name="click">
+    <div class="menu">
+        <div style="display: flex; gap: 20px;">
+            <input type="radio" name="clicktype" value="start" style="margin: auto;">
+            <div class="start" style="padding: 20px;"></div>
+            <p>Start</p>
+        </div>
+
+        <div style="display: flex; gap: 20px;">
+            <input type="radio" name="clicktype" value="goal" style="margin: auto;">
+            <div class="goal" style="padding: 20px;"></div>
+            <p>Goal</p>
+        </div>
+
+        <div style="display: flex; gap: 20px;">
+            <input type="radio" name="clicktype" value="obstacle" style="margin: auto;">
+            <div class="obstacle" style="width: 20px; height: 20px; margin: auto;"></div>
+        </form>
+            <p>Obstacle</p>
+        </div>
+        <button id="visualizePath" type="button">Visualize Path</button>
+        <button id="clear" type="button">Clear Board</button>
+    </div>
+    
+    <div class="wrapper">
+
+    </div>
+</body>
+<script src="pathfinder.js"></script>
+</html>
