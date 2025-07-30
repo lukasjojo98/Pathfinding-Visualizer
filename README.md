@@ -1,38 +1,36 @@
 # 🧭 Pathfinding Visualizer
 
-Ein interaktives Tool zur Visualisierung des **Breadth-First Search (BFS)**-Algorithmus. Dieses Projekt ermöglicht es dir, spielerisch und visuell zu verstehen, wie sich ein Pfad von einem Startpunkt zu einem Zielpunkt durch ein Gitter bewegt — unter Berücksichtigung von Hindernissen.
+An interactive tool for visualizing the **Breadth-First Search (BFS)** algorithm. This project helps you learn and understand how a path is found from a starting point to a destination in a grid — while navigating around obstacles.
 
 ---
 
 ## ✨ Features
 
-- 🎯 Auswahl eines **Start-** und **Zielpunkts**
-- 🧱 Platzierung von **Hindernissen (Wänden)**
-- 🔍 Visualisierung des **BFS-Algorithmus** in Echtzeit
-- 🔁 Zurücksetzen und erneutes Ausführen der Suche möglich
-- 💡 Ideal zum Lernen und Lehren von Suchalgorithmen
+- 🎯 Select a **start** and **end point**
+- 🧱 Place **obstacles (walls)** in the grid
+- 🔍 Visualize the **BFS algorithm** in real-time
+- 🔁 Reset and re-run the search anytime
+- 💡 Great for learning and teaching graph traversal algorithms
 
 ---
 
-## 🧠 Verwendeter Algorithmus
+## 🧠 Algorithm Used
 
-Der **Breadth-First Search (BFS)** ist ein ungewichteter Graph-Suchalgorithmus, der den kürzesten Weg in einem Gitter findet, sofern einer existiert. Er untersucht Nachbarn Ebene für Ebene und garantiert die kürzeste Pfadlänge.
+The **Breadth-First Search (BFS)** is an unweighted graph search algorithm that guarantees the shortest path (if one exists). It explores all neighboring nodes level by level, ensuring the most efficient path through the grid.
 
 ---
 
-## 🖥️ Demo (optional)
+## 🖥️ Demo
 
-Falls du eine Live-Version oder ein GIF hast, füge es hier ein:
-
-> 📺 **Demo ansehen:** [Hier klicken](https://pathfinding-visualizer-esjj.onrender.com)  
+> 📺 **Try the Live Demo:** [Click here](https://pathfinding-visualizer-esjj.onrender.com)  
 > ![Demo GIF](pathfinder.gif)
 
 ---
 
 ## 🛠️ Installation
 
-1. 🔽 Projekt klonen
+1. 🔽 Clone the repository
 
 ```bash
-git clone https://github.com/dein-benutzername/pathfinding-visualizer.git
+git clone https://github.com/your-username/pathfinding-visualizer.git
 cd pathfinding-visualizer
